@@ -36,7 +36,7 @@ bins = 'auto'
 plt.rcParams.update({'font.size': 12})
 
 # Plot Figure 4
-fig4, ax1 = plt.subplots(1, 1, figsize=(10, 6))
+fig3, ax1 = plt.subplots(1, 1, figsize=(10, 6))
 x = data['Return']
 y = data['Delayed_Return']
 # Scatter plot of the data points
@@ -54,11 +54,11 @@ ax1.set_ylabel(r'Historical % return, $r_{t-1}$')
 ax1.set_xlim([y_min, y_max])
 ax1.set_ylim([y_min, y_max])
 ax1.grid(True)
-fig4.tight_layout()
-fig4.savefig('Fig4.png', dpi=600, bbox_inches="tight")
+fig3.tight_layout()
+fig3.savefig('Fig3.png', dpi=600, bbox_inches="tight")
 
 # Plot Figure 5
-fig5, ax2 = plt.subplots(1, 1, figsize=(10, 6))
+fig4, ax2 = plt.subplots(1, 1, figsize=(10, 6))
 # Plot the data and pdf using variable-width kernels
 ax2.hist(data['Return'], density=True, alpha=0.15, bins=bins)
 ax2.set_title('Conditional PDF estimates')
@@ -90,5 +90,5 @@ ax2.plot(x_range, kde_values, color='blue',label=r'$P(R_t\,|\,P(R_{t-1}=$'+f'{y_
 
 ax2.legend()
 
-fig5.tight_layout()
-fig5.savefig('Fig5.png', dpi=600, bbox_inches="tight")
+fig4.tight_layout()
+fig4.savefig('Fig4.png', dpi=600, bbox_inches="tight")
